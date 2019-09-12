@@ -16,7 +16,7 @@
     },
     "autoload": {
         "files": [
-            "src/index.php"
+            "src/runner.php"
         ],
         "psr-4": {
             "Html\\Dsl\\Tests\\": "tests",
