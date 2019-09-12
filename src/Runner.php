@@ -11,7 +11,28 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-function run($x, $y)
+function buildAttrs($tag)
 {
-    return $x + $y;
+    return collect($tag)
+        ->except(['name', 'tagType', 'body'])
+        ->map(function ($value, $key) {
+            return " {$key}=\"{$value}\"";
+        })->join('');
+}
+
+function run($tag)
+{
+    $mapping = [
+        'single' => function ($tag) {
+            $attrs = buildAttrs($tag);
+            return "<{$tag['name']}{$attrs}>";
+        },
+        'pair' => function ($tag) {
+            $attrs = buildAttrs($tag);
+            return "<{$tag['name']}{$attrs}>{$tag['body']}</{$tag['name']}>";
+        }
+    ];
+
+    $build = $mapping[$tag['tagType']];
+    return $build($tag);
 }
