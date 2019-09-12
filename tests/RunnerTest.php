@@ -3,13 +3,21 @@
 namespace Html\Dsl\Tests;
 
 use PHPUnit\Framework\TestCase;
-use function Html\Dsl\runner\run;
+use function Html\Dsl\Runner\run;
 
 class RunnerTest extends TestCase
 {
-    public function testRunner()
+    public function testRunner1()
     {
-        $this->assertEquals(5, run(2, 3));
-        $this->assertEquals(12, run(6, 6));
+        $tag = ['name' => 'hr', 'class' => 'px-3', 'id' => 'myid', 'tagType' => 'single'];
+        $html = '<hr class="px-3" id="myid">';
+        $this->assertEquals($expected, $html);
+    }
+
+    public function testRunner2()
+    {
+        $tag = ['name' => 'div', 'tagType' => 'pair', 'body' => 'text2', 'id' => 'wow'];
+        $html = '<div id="wow">text2</div>';
+        $this->assertEquals($expected, $html);
     }
 }

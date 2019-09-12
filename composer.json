@@ -16,12 +16,8 @@
     },
     "autoload": {
         "files": [
-            "src/runner.php"
-        ],
-        "psr-4": {
-            "Html\\Dsl\\Tests\\": "tests",
-            "Html\\Dsl\\": "src"
-        }
+            "src/Runner.php"
+        ]
     },
     "require": {
         "tightenco/collect": "^6.0"
