@@ -1,0 +1,7 @@
+/vendor/
+/.phpintel
+/tests/.DS_Store
+tests/examples/.DS_Store
+/.DS_Store
+bin/.DS_Store
+src/.DS_Store

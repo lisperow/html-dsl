@@ -1,0 +1,33 @@
+{
+    "name": "johnromanoff/html-dsl",
+    "description": "dsl for html",
+    "type": "library",
+    "authors": [
+        {
+            "name": "lisperow",
+            "email": "lisperow@yandex.ru"
+        }
+    ],
+    "scripts": {
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf",
+        "phpunit": "phpunit",
+        "test": "phpunit tests"
+    },
+    "autoload": {
+        "files": [
+            "src/index.php"
+        ],
+        "psr-4": {
+            "Html\\Dsl\\Tests\\": "tests",
+            "Html\\Dsl\\": "src"
+        }
+    },
+    "require": {
+        "tightenco/collect": "^6.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.4",
+        "phpunit/phpunit": "^8.3"
+    }
+}
